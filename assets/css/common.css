@@ -1,0 +1,221 @@
+/* root */
+:root{
+  --color-dark-rgb: 50, 32, 24;
+  --color-dark: rgba(var(--color-dark-rgb), 1);
+  --color-light-rgb: 234, 229, 223;
+  --color-light: rgba(var(--color-light-rgb), 1);
+  --color-white-rgb: 248, 246, 244;
+  --color-white: rgba(var(--color-white-rgb), 1);
+  --color-black-rgb: 0, 0, 0;
+  --color-black: rgba(var(--color-black-rgb), 1);
+  --color-primary: #903C02;
+  --color-secondary: #0A6365;
+  --color-lightgray: #E0D9D1;
+  --color-stone-50: var(--color-light);
+  --color-stone-100: var(--color-lightgray);
+  --color-stone-200: #CEC3B6;
+  --color-stone-900: var(--color-dark);
+  --color-butterflygreen-500: #2CA09E;
+  --color-butterflygreen-700: var(--color-secondary);
+  --color-butterflygreen-900: #00383C;
+  --color-sunsetorange-800: var(--color-primary);
+  --color-border: rgba(var(--color-dark-rgb), 0.15);
+  --color-border-light: rgba(var(--color-white-rgb), 0.175);
+  --color-text: rgba(var(--color-dark-rgb), 0.9);
+  --color-text-light: rgba(var(--color-white-rgb), 0.9);
+}
+
+/* blind */
+.blind{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* font */
+@font-face {
+  font-family: 'abc-light';
+  src: url('../font/ABCWhyte-Light.woff') format(woff);
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'abc-regular';
+  src: url('../font/ABCWhyte-Regular.woff') format(woff);
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'kaftan';
+  src: url('../font/KaftanSerif-Regular.woff') format(woff);
+  font-weight: normal;
+}
+body{
+  font-family: 'abc-light';
+}
+
+/* text-hover */
+.text-hover{
+  position: relative;
+  overflow: hidden;
+}
+.text-hover span{
+  display: inline-block;
+  transition: transform .5s,top .5s;
+}
+.text-hover .second{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.text-hover:hover .first{
+  animation: hoverFirst;
+  animation-duration: .5s;
+}
+.text-hover:hover .second{
+  animation: hoverSecond;
+  animation-duration: .5s;
+}
+@keyframes hoverFirst{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
+@keyframes hoverSecond{
+  0%{
+    top: 100%;
+  }
+  100%{
+    top: 0;
+  }
+}
+
+/* hover-underline */
+.hover-underline{
+  position: relative;
+  overflow: hidden;
+}
+.hover-underline::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,.25);
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s;
+}
+.hover-underline:hover::before{
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* link-common */
+.link-common{
+  display: inline-block;
+  height: 57px;
+  padding: 0 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background-color .5s;
+}
+.link-common .link-common-inner{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+}
+.link-common svg{
+  width: 15px;
+  height: 15px;
+  transition: all .5s;
+}
+.link-common:hover svg{
+  transform: rotate(90deg);
+}
+.link-common span{
+  color: #fff;
+}
+.link-common:hover .text-hover .first{
+  animation: hoverFirst;
+  animation-duration: .5s;
+}
+.link-common:hover .text-hover .second{
+  animation: hoverSecond;
+  animation-duration: .5s;
+}
+@media(max-width:1199px){
+  .link-common{
+    height: 42px;
+  }
+  .link-common span{
+    font-size: 13px;
+  }
+  .link-common span .mobile{
+    display: none;
+  }
+}
+
+/* ico-damai */
+.ico-damai{
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.ico-damai svg{
+  width: 100%;
+  height: 100%;
+}
+@media(max-width:1199px){
+  .ico-damai{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* cate */
+.cate{
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.6;
+}
+@media(max-width:767px){
+  .cate{
+    font-size: 11px
+  }
+}
+
+/* review-wrap */
+.review-wrap{
+  display: flex;
+  align-self: center;
+  gap: 8px;
+}
+.review-wrap .ico-box{
+  display: flex;
+  align-items: center;
+}
+.review-wrap .ico-box svg{
+  width: 16px;
+  height: 16px;
+}
+.review-wrap .ico-box svg polygon{
+  stroke-width: 0px;
+  stroke: transparent;
+  fill: #F59100;
+}
+.review-wrap .text-box{
+  font-size: 13px;
+}
+.review-wrap .text-box span{
+  opacity: .6;
+}
