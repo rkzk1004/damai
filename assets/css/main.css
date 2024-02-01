@@ -212,7 +212,6 @@
   }
   .sc-welcome .group-img picture.small{
     width: 43%;
-    background: #ccc;
   }
   .sc-welcome .group-img.left picture.small {
     padding-right: 0;
@@ -411,6 +410,9 @@
   .sc-villa .inner{height: 80vh}
   .sc-villa .swiper-bg{height: 70vh;}
   .sc-villa .swiper-text{height: 70vh;}
+  .sc-villa .swiper-text .swiper-slide .cate {
+    display: none;
+  }
   .sc-villa .swiper-card{width: 140px;height: 190px;}
 }
 

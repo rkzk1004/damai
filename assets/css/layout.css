@@ -217,6 +217,11 @@ body.on{
     width: 112px;
   }
 }
+@media(max-width:499px){
+  .header .group-header .logo a{
+    width: 20vw;
+  }
+}
 
 /* group-side-nav */
 .group-side-nav{
@@ -370,6 +375,9 @@ body.on{
     width: 100%;
     padding-top: 40px;
   }
+  .group-side-nav .btn-area {
+    padding-left: 0;
+  }
   .group-side-nav .btn-close{
     padding-left: 3vw;
   }
@@ -384,6 +392,14 @@ body.on{
   }
   .group-side-nav .rating-area{
     padding-left: 3vw;
+  }
+}
+@media(max-width:499px){
+  .group-side-nav .menu-second-area {
+    display: none;
+  }
+  .group-side-nav .rating-area .ico-box {
+    display: none;
   }
 }
 
